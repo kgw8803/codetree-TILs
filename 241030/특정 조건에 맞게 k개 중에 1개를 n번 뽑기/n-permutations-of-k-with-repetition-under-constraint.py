@@ -1,8 +1,8 @@
 K, N = map(int, input().split())
-answer = []
+arr = []
 
 def print_answer():
-    for elem in answer:
+    for elem in arr:
         print(elem, end=" ")
     print()
 
@@ -12,11 +12,12 @@ def choose(curr_num):
         return
 
     for i in range(1, K+1):
-        if curr_num == 1 or answer[-1] != 0:
-            answer.append(i)
-            choose(curr_num + 1)
-            answer.pop()
-      
+        if len(arr) >= 2 and arr[-1] == i and arr[-2] == i:
+            continue
+
+        arr.append(i)
+        choose(curr_num + 1)
+        arr.pop()
 
     return
 
