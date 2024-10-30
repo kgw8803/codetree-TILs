@@ -1,4 +1,5 @@
-N,  K = map(int, input().split())
+K, N = map(int, input().split())
+
 arr = []
 
 def choose(curr_num):
