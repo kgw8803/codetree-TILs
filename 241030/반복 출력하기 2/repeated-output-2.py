@@ -5,4 +5,6 @@ def print_hellow(n):
     print("HelloWorld")
 
 
-print_hellow(4)
+n  = int(input())
+
+print_hellow(n)
