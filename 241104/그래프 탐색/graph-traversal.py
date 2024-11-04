@@ -1,36 +1,28 @@
-# 인접 행렬
-D1 = [
-    [0 for _ in range(V+1)]
-    for _ in range(V+1)
-]
+N, M = map(int, input().split())
 
-# 인접 리스트
-D2 = [
-    []
-    for _ in range(V+1)
-]
-
-for _ in range(E):
-    start end = map(int, input().split())
-    # 인접 행렬
-    D1[start][end] = 1
-
-    #인접 리스트
-    D2[start].append(end)
+graph = [ [] for _ in range(N+1)]
 
 
-    #가중치가 있을 때
-    # 인접 행렬
-    D1[start][end] = cost
-
-    #인접 리스트
-    D2[start].append((end,cost))
+for _ in range(M):
+    x, y = map(int, input().split())
+    graph[x].append(y)
+    graph[y].append(x)
 
 
-# 주의할 점 중복 간선에서 가중치가 2개가 할당될 때
+visited = [False] * (N+1)
 
-# ex) 1 2 10
-      1 2 20 
-# 문제 1에서 2로 가는 최단 거리를 구하세요.
-    if D1[start][end] = -1 or D1[start][end] > cost:
-        D1[start][end] = cost
+
+def dfs(now):
+    visited[now] = True
+    for nxt in graph[now]:
+        if not visited[nxt]:
+            dfs(nxt)
+
+dfs(1)
+
+cnt = 0
+for v in visited[2:]:
+    if v:
+        cnt += 1
+
+print(cnt)
