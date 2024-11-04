@@ -13,6 +13,7 @@ visited = [
 ]
 
 
+
 def can_go(x, y):
     if x < 0 or x >= N or y < 0 or  y >= N:
         return False
@@ -23,6 +24,8 @@ def can_go(x, y):
 
 
 dxy = [(-1, 0), (1, 0), (0, 1), (0, -1)]
+
+
 
 def bfs():
     q = deque()
