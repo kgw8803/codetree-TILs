@@ -15,7 +15,7 @@ visited = [
 
 
 def can_go(x, y):
-    if x < 0 or x >= N or y < 0 or  y >= N:
+    if x < 0 or x >= N or y < 0 or  y >= M:
         return False
     if visited[x][y] or A[x][y] == 0:
         return False
