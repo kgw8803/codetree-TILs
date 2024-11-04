@@ -26,7 +26,8 @@ dxy = [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
 def bfs():
     q = deque()
-    q.append(0,0)
+
+    q.append((0,0))
     visited[0][0] = True
 
 
